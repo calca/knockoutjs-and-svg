@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVG", "SVG\SVG.csproj", "{1B32B483-95D3-467A-8896-3C35FED66FD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Durango = Debug|Durango
+		Release|Any CPU = Release|Any CPU
+		Release|Durango = Release|Durango
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Debug|Durango.ActiveCfg = Debug|Durango
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Debug|Durango.Build.0 = Debug|Durango
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Release|Durango.ActiveCfg = Release|Durango
+		{1B32B483-95D3-467A-8896-3C35FED66FD2}.Release|Durango.Build.0 = Release|Durango
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

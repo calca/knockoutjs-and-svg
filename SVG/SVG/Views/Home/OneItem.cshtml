@@ -1,0 +1,180 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "SVG Template";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SVG Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-responsive.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-2.0.3.js"></script>
+    <script src="~/Scripts/knockout-2.3.0.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <link href="~/Scripts/spectrum.css" rel="stylesheet" />
+    <script src="~/Scripts/spectrum.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">SVG Template</a>
+                @*                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>*@
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Double Circles</h3>
+        <div class="row">
+            <div class="span7">
+                <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+                <!-- Created with Inkscape (http://www.inkscape.org/) -->
+                <svg
+                    xmlns:dc="http://purl.org/dc/elements/1.1/"
+                    xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                    xmlns:svg="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="744.09448"
+                    height="1052.3622"
+                    id="double-circle">
+                    <defs
+                        id="defs4" />
+                    <metadata
+                        id="metadata7">
+                        <rdf:RDF>
+                            <cc:Work
+                                rdf:about="">
+                                <dc:format>image/svg+xml</dc:format>
+                                <dc:type
+                                    rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                <dc:title></dc:title>
+                            </cc:Work>
+                        </rdf:RDF>
+                    </metadata>
+                    <g
+                        id="layer1">
+                        <path data-bind="style: { 'fill' : colourCircleOne, 'stroke': strokeCircleOne  }"
+                              d="m 265.71428,315.21933 a 80,80 0 1 1 -160,0 80,80 0 1 1 160,0 z"
+                              id="path2985"
+                              style="fill: #1e1884; fill-opacity: 1; stroke: #1494ff; stroke-width: 5; stroke-miterlimit: 4; stroke-opacity: 1; stroke-dasharray: none" />
+                        <path data-bind="style: { 'fill' : colourCircleTwo, 'stroke': strokeCircleTwo  }"
+                              d="m 394.2857,416.64789 c 0,51.28358 -41.57356,92.85714 -92.85714,92.85714 -51.28358,0 -92.85714,-41.57356 -92.85714,-92.85714 0,-51.28358 41.57356,-92.85714 92.85714,-92.85714 51.28358,0 92.85714,41.57356 92.85714,92.85714 z"
+                              transform="translate(-28.571429,-31.428571)"
+                              id="path2987"
+                              style="fill: #00aa00; fill-opacity: 1; stroke: #14943b; stroke-width: 10; stroke-miterlimit: 4; stroke-opacity: 1; stroke-dasharray: none" />
+                    </g>
+                </svg>
+
+            </div>
+            <div class="span4 well">
+                <h3>Controls</h3>
+                <div class="span4">
+                    <div class="span4"><h5>Stroke One</h5></div>
+                    <input type='text' id="stroke-one" />
+                </div>
+                <div class="span4">
+                    <div class="span4"><h5>Colour One</h5></div>
+                    <input type='text' id="colour-one" />
+                </div>
+                <div class="span4">
+                    <div class="span4"><h5>Stroke Two</h5></div>
+                    <input type='text' id="stroke-two" />
+                </div>
+                <div class="span4">
+                    <div class="span4"><h5>Colour Two</h5></div>
+                    <input type='text' id="colour-two" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+    <div class="footer">
+        <p>&copy; AC 2013</p>
+    </div>
+
+    <!-- /container -->
+</body>
+
+<script type="text/javascript" language="javascript">
+    (function () {
+        var circleModel = function () {
+            var that = this;
+            this.strokeCircleOne = ko.observable('#000000');
+            this.strokeCircleTwo = ko.observable('#000000');
+            this.colourCircleOne = ko.observable('#000000');
+            this.colourCircleTwo = ko.observable('#000000');
+        };
+
+        $(document).ready(function () {
+            var model = new circleModel();
+            ko.applyBindings(model, $("#double-circle").get(0));
+
+            $('#stroke-one').spectrum({
+                color: '#000000',
+                flat: true,
+                clickoutFiresChange: true,
+                showButtons: false,
+                move: function(color) {
+                    model.strokeCircleOne(color);
+                }
+            });
+            $('#colour-one').spectrum({
+                color: '#000000',
+                flat: true,
+                clickoutFiresChange: true,
+                showButtons: false,
+                move: function (color) {
+                    model.colourCircleOne(color);
+                }
+            });
+            $('#stroke-two').spectrum({
+                color: '#000000',
+                flat: true,
+                clickoutFiresChange: true,
+                showButtons: false,
+                move: function (color) {
+                    model.strokeCircleTwo(color);
+                }
+            });
+            $('#colour-two').spectrum({
+                color: '#000000',
+                flat: true,
+                clickoutFiresChange: true,
+                showButtons: false,
+                move: function (color) {
+                    model.colourCircleTwo(color);
+                }
+            });
+        });
+    }())
+</script>
+
+</html>
